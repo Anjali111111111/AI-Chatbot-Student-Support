@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | AI Chatbot for Student Support{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h2 class="fw-bold">Welcome, {{ name }} 👋</h2>
+    <p class="text-muted">Here's your student support dashboard, powered by AI, NLP and LLM-based query processing. Choose an option below to get started.</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <a href="{{ url_for('chatbot_page') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-robot display-4 text-primary"></i>
+                    <h5 class="mt-3 fw-bold">AI Chatbot</h5>
+                    <p class="text-muted small">NLP-based query processing with LLM-powered response generation.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('faq') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-question-circle display-4 text-success"></i>
+                    <h5 class="mt-3 fw-bold">FAQ</h5>
+                    <p class="text-muted small">AI-powered retrieval finds the most relevant answers instantly.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('courses') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-journal-bookmark display-4 text-warning"></i>
+                    <h5 class="mt-3 fw-bold">Course Information</h5>
+                    <p class="text-muted small">Explore available courses and details.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('notices') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-megaphone display-4 text-danger"></i>
+                    <h5 class="mt-3 fw-bold">Notice Board</h5>
+                    <p class="text-muted small">Check the latest college announcements.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('chat_history') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-clock-history display-4 text-info"></i>
+                    <h5 class="mt-3 fw-bold">Chat History</h5>
+                    <p class="text-muted small">Review your previous chatbot conversations.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url_for('contact') }}" class="text-decoration-none">
+            <div class="card dashboard-card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <i class="bi bi-telephone display-4 text-secondary"></i>
+                    <h5 class="mt-3 fw-bold">Contact Info</h5>
+                    <p class="text-muted small">Get in touch with student support services.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}
