@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}FAQ | Student Support Services{% endblock %}
+
+{% block content %}
+<h2 class="fw-bold mb-3"><i class="bi bi-question-circle"></i> Frequently Asked Questions</h2>
+<p class="text-muted">Find quick answers to common student queries.</p>
+
+<div class="accordion" id="faqAccordion">
+    {% for item in faqs %}
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#faq{{ item.id }}">
+                {{ item.question }}
+            </button>
+        </h2>
+        <div id="faq{{ item.id }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+             data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                {{ item.answer }}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-muted">No FAQs available at the moment.</p>
+    {% endfor %}
+</div>
+{% endblock %}

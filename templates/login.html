@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Login | Student Support Services{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center login-wrapper">
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow-lg border-0 login-card">
+            <div class="card-body p-4">
+                <div class="text-center mb-4">
+                    <i class="bi bi-mortarboard-fill display-4 text-primary"></i>
+                    <h3 class="fw-bold mt-2">Student Login</h3>
+                    <p class="text-muted small">AI Chatbot for Student Support Services</p>
+                </div>
+
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="you@student.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </button>
+                </form>
+
+                <hr>
+                <div class="alert alert-secondary small mb-0">
+                    <strong>Test Account:</strong><br>
+                    Email: <code>john@student.com</code><br>
+                    Password: <code>student123</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
